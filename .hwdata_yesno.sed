@@ -1,0 +1,16 @@
+s/^y$/Ok/g
+s/^yy$/Ok/g
+s/^yY$/Ok/g
+s/^Y$/Ok/g
+s/^YY$/Ok/g
+s/^yY$/Ok/g
+s/^na$/N\/A/g
+s/^nA$/N\/A/g
+s/^Na$/N\/A/g
+s/^NA$/N\/A/g
+s/^n$/Failed/g
+s/^N$/Failed/g
+s/^nn$/Failed/g
+s/^NN$/Failed/g
+s/^Nn$/Failed/g
+s/^nN$/Failed/g
