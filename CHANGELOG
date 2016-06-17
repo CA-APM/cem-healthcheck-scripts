@@ -135,4 +135,5 @@ Mon Sep  8 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
 ================================================================================
 
 === GIT CHANGELOG ==============================================
-* 2016-06-17 - (HEAD -> master, tag: v1.20-89) Initial apm-scripts git commit 
+* 2016-06-17 - (HEAD -> master) Recreated CHANGELOG 
+* 2016-06-17 - (tag: v1.20-89) Initial apm-scripts git commit 

@@ -1,4 +1,4 @@
-# apm-scripts rel1.20-89
+# fieldpack.apm-scripts rel1.20-89
 
 **Purpose**: Provides scripts to collect data for troubleshooting an APM 9.x or later installation  
   _by J. Mertin -- joerg.mertin(-AT-)ca.com_
