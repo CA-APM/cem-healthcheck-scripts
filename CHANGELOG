@@ -135,5 +135,20 @@ Mon Sep  8 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
 ================================================================================
 
 === GIT CHANGELOG ==============================================
-* 2016-06-17 - (HEAD -> master) Recreated CHANGELOG 
-* 2016-06-17 - (tag: v1.20-89) Initial apm-scripts git commit 
+commit 10f9e94f573c145380fc6fc4bb6eb5b9ff3943c2
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:38:46 2016 +0200
+
+    Name change - adapted for first import.
+
+commit fcd61d667a1ba19ca8f28489487e3faf15847dc4
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:35:15 2016 +0200
+
+    Recreated CHANGELOG
+
+commit 7a971178f9bff35d2d1bce4aa47d865d82ef586b
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:33:54 2016 +0200
+
+    Initial apm-scripts git commit
