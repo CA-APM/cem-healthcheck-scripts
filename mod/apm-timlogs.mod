@@ -138,7 +138,7 @@ entry "uptime"
 uptime >> $LogFile
 
 entry "Release Information"
-find /etc -name "*-release" -type f -exec cat {} \; $LogFile
+find /etc -name "*-release" -type f -exec cat {} \; >> $LogFile
 
 if [ -f /etc/sysconfig/selinux ]
 then
