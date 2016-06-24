@@ -237,12 +237,12 @@ apmsysinfo () {
 	    then
 		if [ `cat $FILE | wc -l` -eq 1 ]
 		then
-		    echo "`cat $FILE | head -1`"
+		    echo "`cat $FILE`"
 		else
 		    . $FILE
 		    if [ "$etcfile" == "os" ]
 			then
-			echo "$PRETTY_NAME" | head -1
+			echo "$PRETTY_NAME"
 		    else
 			echo "Unable to identify Distribution"
 		    fi
