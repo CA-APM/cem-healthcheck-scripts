@@ -108,7 +108,7 @@ ProdName=`dmidecode | grep "Product Name" | head -1 | cut -d ':' -f 2`
 # Vendor
 Vendor=`dmidecode | grep Manufacturer | head -1 | cut -d ':' -f 2` 
 # Get OS-Version
-OSRelease=`apmsysinfo`
+OSRelease=`cat /etc/system-release | head -1`
 
 if [ -f ${TIMDIR}/config/domainconfig.xml ]
 then
