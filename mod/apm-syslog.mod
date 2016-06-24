@@ -182,7 +182,7 @@ fi
 
 title "Configured network configuration / System files"
 
-for file in `find /etc/sysconfig/network-scripts -name "ifcfg-eth*"`
+for file in `find /etc/sysconfig/network-scripts -name "ifcfg-*"`
 do
     entry "Network interfaces cfg: $file"
     cat $file >> $LogFile
