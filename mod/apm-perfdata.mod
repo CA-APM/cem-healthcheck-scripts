@@ -206,6 +206,8 @@ then
     chown ${USERNAME}.${GRPNAME} ${DATE}-Performance-data-${Identifier}.tar.gz
 fi
 
+echo "Cleaning up..."
+rm -rf ./data
 
 echo "> Performance data has been dumped to"
 echo ">>> File: ${DATE}-Performance-data-${Identifier}.tar.gz"
