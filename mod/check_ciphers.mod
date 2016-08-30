@@ -156,7 +156,7 @@ echo -n "MD5 Checksum: " >> ${LogFile}.modulus
 openssl x509 -noout -modulus -in ${LogFile}.certificate | md5sum >> ${LogFile}.modulus
 
 
-DELAY=1
+# Getting a list of the ciphers supported by the current openssl program
 ciphers=$(openssl ciphers 'ALL:eNULL' | sed -e 's/:/ /g')
 
 echo "Obtaining cipher list from $(openssl version)."
