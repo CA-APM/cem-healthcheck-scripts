@@ -439,29 +439,20 @@ then
     tail -20 ${TIMDIR}/logs/getDownloadFileNames.log >> $LogFile
 fi
 
-if [ -d /nqtmp/tim ]
+if [ -d /nqtmp ]
 then
-    entry "Checking size of nqtmp/tim"
-    du -sh /nqtmp/tim >> $LogFile
-    entry "Checking number of files in nqtmp/tim"
-    find /nqtmp/tim -type f | wc -l >> $LogFile
+    entry "Checking directory sizes in /nqtmp"
+    find /nqtmp -type d -exec du -sh {} \;  >> $LogFile
+    entry "Checking files in /nqtmp subdirectories"
+    for dir in `find /nqtmp -type d`
+    do
+	FILES=$(find ${dir} -type f | wc -l)
+	echo "# Files in $dir: $FILES" >> $LogFile
+    done
+
 fi
 
-if [ -d /nqtmp/headers ]
-then
-    entry "Checking size of nqtmp/headers"
-    du -sh /nqtmp/headers >> $LogFile
-    entry "Checking number of files in nqtmp/headers"
-    find /nqtmp/headers -type f | wc -l >> $LogFile
-fi
-
-if [ -d /nqtmp/ReceivedFiles ]
-then
-    entry "Checking size of nqtmp/ReceivedFiles"
-    du -sh /nqtmp/ReceivedFiles >> $LogFile
-    entry "Checking number of files in nqtmp/ReceivedFiles"
-    find /nqtmp/ReceivedFiles -type f | wc -l >> $LogFile
-fi
+entry "Display nqtmp file structure"
 
 
 title "Monitoring network interface stats and traffic analysis"
