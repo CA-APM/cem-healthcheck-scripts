@@ -439,6 +439,30 @@ then
     tail -20 ${TIMDIR}/logs/getDownloadFileNames.log >> $LogFile
 fi
 
+if [ -d /nqtmp/tim ]
+then
+    entry "Checking size of nqtmp/tim"
+    du -sh /nqtmp/tim
+    entry "Checking number of files in nqtmp/tim"
+    find /nqtmp/tim -type f | wc -l
+fi
+
+if [ -d /nqtmp/headers ]
+then
+    entry "Checking size of nqtmp/headers"
+    du -sh /nqtmp/headers
+    entry "Checking number of files in nqtmp/headers"
+    find /nqtmp/headers -type f | wc -l
+fi
+
+if [ -d /nqtmp/ReceivedFiles ]
+then
+    entry "Checking size of nqtmp/ReceivedFiles"
+    du -sh /nqtmp/ReceivedFiles
+    entry "Checking number of files in nqtmp/ReceivedFiles"
+    find /nqtmp/ReceivedFiles -type f | wc -l
+fi
+
 
 title "Monitoring network interface stats and traffic analysis"
 
