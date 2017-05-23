@@ -442,25 +442,25 @@ fi
 if [ -d /nqtmp/tim ]
 then
     entry "Checking size of nqtmp/tim"
-    du -sh /nqtmp/tim
+    du -sh /nqtmp/tim >> $LogFile
     entry "Checking number of files in nqtmp/tim"
-    find /nqtmp/tim -type f | wc -l
+    find /nqtmp/tim -type f | wc -l >> $LogFile
 fi
 
 if [ -d /nqtmp/headers ]
 then
     entry "Checking size of nqtmp/headers"
-    du -sh /nqtmp/headers
+    du -sh /nqtmp/headers >> $LogFile
     entry "Checking number of files in nqtmp/headers"
-    find /nqtmp/headers -type f | wc -l
+    find /nqtmp/headers -type f | wc -l >> $LogFile
 fi
 
 if [ -d /nqtmp/ReceivedFiles ]
 then
     entry "Checking size of nqtmp/ReceivedFiles"
-    du -sh /nqtmp/ReceivedFiles
+    du -sh /nqtmp/ReceivedFiles >> $LogFile
     entry "Checking number of files in nqtmp/ReceivedFiles"
-    find /nqtmp/ReceivedFiles -type f | wc -l
+    find /nqtmp/ReceivedFiles -type f | wc -l >> $LogFile
 fi
 
 
