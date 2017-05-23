@@ -1,4 +1,7 @@
 === CHANGELOG ==================================================
+Tue May 23 11:36:40 CEST 2017
+- Added nqtmp directory content size, and # of files
+
 Thu Apr 28 18:41:38 CEST 2016
 - Added pcap UI capability
 
@@ -135,8 +138,17 @@ Mon Sep  8 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
 ================================================================================
 
 === GIT CHANGELOG ==============================================
-* 2016-06-17 - (HEAD -> master) Fixed OS-Release extraction redirection 
-* 2016-06-17 - (origin/master) Added missing .build file 
+* 2017-05-23 - (HEAD -> master) Changed nqtmp file listing/sizes 
+* 2017-05-23 - (origin/master, origin/HEAD) Slight redirection change 
+* 2017-05-23 - Added nqtmp file and size checks 
+* 2016-08-30 - Cleanup. 
+* 2016-06-24 - Extracting system release throughb system-release again. 
+* 2016-06-24 - Restored old behavior of apmsysinfo 
+* 2016-06-24 - Because many network-setups do not use eth anymore, removed the limitation 
+* 2016-06-24 - Added cleanup of data directory after data collection. 
+* 2016-06-17 - Updated changelog data 
+* 2016-06-17 - Fixed OS-Release extraction redirection 
+* 2016-06-17 - Added missing .build file 
 * 2016-06-17 - Name change - adapted for first import. 
 * 2016-06-17 - Recreated CHANGELOG 
 * 2016-06-17 - (tag: v1.20-89) Initial apm-scripts git commit 

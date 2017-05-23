@@ -1,4 +1,4 @@
-# fieldpack.apm-scripts rel1.20-89
+# fieldpack.apm-scripts rel1.20-90
 
 **Purpose**: Provides scripts to collect data for troubleshooting an APM 9.x or later installation  
   _by J. Mertin -- joerg.mertin(-AT-)ca.com_
@@ -122,7 +122,7 @@ Chose the action to perform
 ================================================================================  
  >> Choose action: 
 ```
-Choose the action to perform: em or EM to extract logs for a EM installation.
+Choose the action to perform: em or EM to extract logs for a EM installation.  
 _Note: The commands are case insensitive. You can also type q or Q to exit._
 
 Please only execute the data-collection where it makes sense:
