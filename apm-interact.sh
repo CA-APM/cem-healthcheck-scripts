@@ -69,7 +69,7 @@ LDATE=`date +"%F @ %T"`
 
 # Catch user-name
 USER=`whoami`
-echo "# This is used to identify the user - in case sudo needs to be used or not" > ${BASEDIR}/origin.cgf
+echo "# This is used to identify the user - in case sudo needs to be used or not" > ${BASEDIR}/origin.cfg
 echo "USERNAME=$USER" >> ${BASEDIR}/origin.cfg
 echo "GRPNAME=`id -ng $USER`" >> ${BASEDIR}/origin.cfg
 
