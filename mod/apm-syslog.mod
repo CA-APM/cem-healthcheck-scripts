@@ -182,6 +182,9 @@ fi
 
 title "Configured network configuration / System files"
 
+entry "System kernel configuration: /etc/sysctl"
+cat /etc/sysctl.conf >> $LogFile
+
 for file in `find /etc/sysconfig/network-scripts -name "ifcfg-*"`
 do
     entry "Network interfaces cfg: $file"
