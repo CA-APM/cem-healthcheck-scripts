@@ -290,6 +290,9 @@ then
     
     echo "Launching: "
     echo "/opt/NetQoS/bin/buildpcap --start-datetime ${DATESTART} --end-datetime ${DATEEND} --feed $FEED --max-file-kb $SIZE --output-file $CapFile"
+    echo "Some versions of buildpcap (notably in MTP 10.3.0.16) do not exit from the capture."
+    echo "A Ctrl-C may be required to exit the application"
+
     # Actual capture
     /opt/NetQoS/bin/buildpcap --start-datetime ${DATESTART} --end-datetime ${DATEEND} --feed $FEED --max-file-kb $SIZE --output-file $CapFile
     
