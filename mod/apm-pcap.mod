@@ -295,10 +295,14 @@ then
 
     # Actual capture
     /opt/NetQoS/bin/buildpcap --start-datetime ${DATESTART} --end-datetime ${DATEEND} --feed $FEED --max-file-kb $SIZE --output-file $CapFile
+
+    # Zipping file
+    echo "Compressing pcap file"
+    gzip -9 $CapFile
     
 elif [ "$TYPE" == "NOMTP" ]
 then
-
+    
     # We are on a TIM/HPTIM
     if [ "$DEFCFG" == "n" ]
     then
@@ -415,8 +419,9 @@ then
 	    $SHARK -q -c ${PCOUNT} -s 0 -i $NDEV -w $CapFile
 	    break;;
     esac
-
+    
     # Zipping file
+    echo "Compressing pcap file... This will take a while.";
     gzip -9 $CapFile
 
     
@@ -425,6 +430,8 @@ else
     errlvl=1
     errors
 fi
+
+
 
 echo "Packet capture in: ${CapFile}.gz"
 echo
