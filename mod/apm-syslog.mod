@@ -240,12 +240,12 @@ then
     # Disks
     for part in $PARTITIONS
     do
-	entry "Disk/Mem access speed"
-	hdparm -tT $part >> $LogFile 2> /dev/null
-	sleep 1
-	hdparm -tT $part >> $LogFile 2> /dev/null
-	sleep 1
-	hdparm -tT $part >> $LogFile 2> /dev/null
+        entry "Disk/Mem access speed"
+        hdparm -tT $part >> $LogFile 2> /dev/null
+        sleep 1
+        hdparm -tT $part >> $LogFile 2> /dev/null
+        sleep 1
+        hdparm -tT $part >> $LogFile 2> /dev/null
     done
 else
     entry "Skipped disk read access speed test - missing hdparm !"
