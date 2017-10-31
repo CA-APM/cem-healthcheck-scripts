@@ -1,3 +1,9 @@
+commit 43073b81156d9444d45c620cca40ab64235b3711
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Oct 31 10:27:06 2017 +0100
+
+    Lowered the process priority to reduce the overall load during the data collection. This will reduce the impact of the data collection.
+
 commit 0043e1e52b40891abf3f91111fd1aa9a5cfb93f1
 Author: Joerg Mertin <joerg.mertin@ca.com>
 Date:   Tue Oct 31 09:54:37 2017 +0100
