@@ -321,7 +321,7 @@ then
     cat ${TIMDIR}/config/tim.options >> $LogFile
 
     entry "Configured WebFilters: ${TIMDIR}/config/timconfig.xml"
-    grep -v --no-message encoding ${TIMDIR}/config/timconfig.xml >> $LogFile
+    xmllint -format -recover ${TIMDIR}/config/timconfig.xml >> $LogFile
 
     if [ `which xsltproc  2>/dev/null` ]
     then
@@ -329,21 +329,21 @@ then
 	if [ -f ${TIMDIR}/config/clientfilter.xml ]
 	then
 	    entry "Client filter: ${TIMDIR}/config/clientfilter.xml"
-	    /usr/bin/xsltproc ${BASEDIR}/xml2txt.xsl ${TIMDIR}/config/clientfilter.xml  | sed -e '/^ \+$/d' >> $LogFile
+	    xmllint -format -recocver ${TIMDIR}/config/clientfilter.xml >> $LogFile
 	else
 	    entry "No Client filter defined: ${TIMDIR}/config/clientfilter.xml"
 	fi
 	
 	entry "Watchdog Configuration: ${TIMDIR}/config/watchdogconfig.xml"
-	/usr/bin/xsltproc ${BASEDIR}/xml2txt.xsl ${TIMDIR}/config/watchdogconfig.xml  | sed -e '/^ \+$/d' >> $LogFile
+	xmllint -format -recover ${TIMDIR}/config/watchdogconfig.xml >> $LogFile
 	
 	entry "Interface filter: ${TIMDIR}/config/interfacefilter.xml"
-	/usr/bin/xsltproc ${BASEDIR}/xml2txt.xsl ${TIMDIR}/config/interfacefilter.xml  | sed -e '/^ \+$/d' >> $LogFile
+	xmllint -format -recover ${TIMDIR}/config/interfacefilter.xml >> $LogFile
 	
 	if [ -f ${TIMDIR}/config/introscopeconfig.xml ]
 	then
 	    entry "Introscope Config: ${TIMDIR}/config/introscopeconfig.xml"
-	    /usr/bin/xsltproc ${BASEDIR}/xml2txt.xsl ${TIMDIR}/config/introscopeconfig.xml  | sed -e '/^ \+$/d' >> $LogFile
+	    xmllint -format -recover ${TIMDIR}/config/introscopeconfig.xml >> $LogFile
 	fi
 	
 	# Check for javaplugins
@@ -353,7 +353,8 @@ then
 	    for file in `find ${TIMDIR}/config/javapluginconfigs -type f -name "*.xml"`
 	    do
 		echo "$file"  >> $LogFile
-		/usr/bin/xsltproc ${BASEDIR}/xml2txt.xsl $file  | sed -e '/^ \+$/d' >> $LogFile
+		xmllint -format -recover $file >> $LogFile
+		echo ""  >> $LogFile
 	    done
 	fi
     else
