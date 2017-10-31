@@ -187,9 +187,9 @@ do
 	USERCHK=`whoami`
 	if [ "$USERCHK" != "root" ]
 	then
-	    ${SUDO} ${BASEDIR}/mod/${EXEC}
+	    nice ${SUDO} ${BASEDIR}/mod/${EXEC}
 	else
-	    ${BASEDIR}/mod/${EXEC}
+	    nice ${BASEDIR}/mod/${EXEC}
 	fi
     fi
     
