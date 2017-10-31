@@ -1,8 +1,7 @@
-# fieldpack.apm-scripts rel1.20-90
+# fieldpack.apm-scripts 1.20-91 by J. Mertin -- joerg.mertin(-AT-)ca.com
+Purpose: Provides scripts to collect data for troubleshooting an APM 9.x or later installation
 
-**Purpose**: Provides scripts to collect data for troubleshooting an APM 9.x or later installation  
-  _by J. Mertin -- joerg.mertin(-AT-)ca.com_
-
+# Description
 The apm-scripts can be installed at any location and provide an
 interactive interface to collect data for specific needs
 (Troubleshooting, Performance/Hardware analysis or Health-check).  
@@ -192,3 +191,143 @@ Database Reporting Server Monitoring
 
 
 
+# Manual Changelog
+```
+Tue May 23 11:36:40 CEST 2017
+- Added nqtmp directory content size, and # of files
+
+Thu Apr 28 18:41:38 CEST 2016
+- Added pcap UI capability
+
+Mon Feb 29 16:26:47 CET 2016
+- Added balancer configuration
+- Various changes to make the scripts run inside a docker
+  container.
+
+Fri Jan 15 16:53:47 CET 2016
+- remote the NtplTool call. Runs on one out of 2 MTP's
+  only. Reason unknown.
+
+Thu Oct 15 13:11:08 CEST 2015
+- Added extraction of apmpacket log, warning/error lines only
+
+Fri Oct  9 15:36:41 CEST 2015
+- Added a top directive to show currently running programs
+- More fine tuning
+- Extracting some information from Filesystem drivers
+- Added code to check for out of order segments in pcap/tshark check
+
+Wed Sep 30 16:19:05 <jmertin@antigone> - 1.20-78
+- Support for xfs filesystem info gathering
+- Added filter for Bidirectional traffic displa in tshark
+
+Thu Sep 10  2015  <jmertin@antigone> - 1.20-77
+- Added support for the napatech nt3g drivers
+- Changed interface detection function to reflect the new naming
+  schemes
+
+Tue Aug 11  2015  <jmertin@antigone> - 1.20-77
+- Reduced error messages dumped to console
+- fixed minor bugs (user feedback)
+- remoted ntpq - it left the console in locked mode and wouldn't
+  exit after exection.
+- Added ntpstat view to repalce ntpq.
+
+Thu Jul  2  2015 <jmertin@antigone> - 1.20-77
+- Adapted apm-syslog to include apm-scripts version
+- Added check for applications using SWAP.
+- Added check on ntp status and vmotion host migration detection.
+
+Wed Jul  1  2015 <jmertin@antigone> - 1.20-76
+- Added hdparm system read speed check
+
+Mon Jun 29 2015 <jmertin@antigone> - 1.20-76
+- Added support for non-suid root scripts
+- Changed Sizing to performance (performance data collection)
+
+Fri Jun 26 2015 <jmertin@antigone> - 1.20-75
+- Released build 75
+- Finalized sysinfo collector module, renamed to hwcoll.
+- Added apm-scripts version info into all logs.
+
+Wed Jun 24 2015 <jmertin@antigone> - 1.20-74
+- Added sysinfo-collector code, to extract data for the HW Compat
+  DB. Still experimental. Need ton adapt the sysinfo-code to the
+  shared-code base
+
+Tue Jun 23 2015 <jmertin@antigone> - 1.20-74
+- Added Data-directory wipe before new timperf data is collected.
+- Changed Display of DF output
+
+Thu Apr  2 2015 <jmertin@antigone> - 1.20-73
+- Changed the way the Napatech card data is collected
+- Added Storage Manager readout code to SYS call for MTP
+- Packaging, Changelog updated
+- Added workaround for missing pg_env.sh data on old installations
+
+Tue Feb 24 2015 Joerg Mertin  <jmertin@titan> - 1.20-72
+- Added workaround for pg_env.sh configuration script not found on
+  old installations
+
+Thu Feb 19 2015 by <jmertin@titan> - Version 1.20-71
+- Fix for tshark interface loop which was not found when non regular
+  network interfaces are in use.
+
+Wed Nov 19 2014 by <jmertin@titan> - Version 1.20-70
+- Added certificate export and modulus computation of remote 
+  certificate in CIPHER module
+- Network interface traffic detection routine changed
+-  PSQL data queries added
+
+Fri Dec 19 2014 Joerg Mertin  <jmertin@titan> - 1.20-69
+- Initial apmPHP function
+- replaced lsb_release gathering using internal apmsysinfo 
+  function
+
+Sun Sep 28 2014 Joerg Mertin  <jmertin@titan> - 1.20-69
+- Removed some checks to be done on MTP's, as these lock the script
+  when 2 Napatech cards are installed in Master/Slave configuration
+  (8Ports).
+- Some fine tuning on Interface messages
+
+Wed Sep 17 2014 Joerg Mertin  <jmertin@titan> - 1.20-68
+- Changed the TIM 9.5/9.6 detection to be based on the timsettings.db
+  instead of looking for the license file.
+
+Fri Sep 12 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
+- Added complementary check on /tmp size for packet capture.
+  If less than 2 GB available, only headers will be captured
+
+Mon Sep  8 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
+- Added 2 more DB checks. Cache hit ratio and index usage
+
+* Thu Sep 4 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
+- Added additional tshark analysis report
+- Added additional extraction of TIM log data
+
+* Wed Jul 30 2014 Joerg Mertin  <jmertin@titan> - 1.20-62
+- Packet capture now working for Single TIM, Single TIM with napatech
+  Capture card and Multiport collector using buildpcap
+- Added MTP automatic Napatech card feed detection for buildcap
+- Added expert analysis report creation on packet capture
+- Added modinfo extraction for ntki driver (Napatech - not in the
+  usual path)
+- Made sure the packet capture is not taking into account the payload,
+  and increased the limit in capture time. This will increase the time
+  to take a packet capture and analysis, however the data will be way
+  more accurate.
+
+* Mon Jul 28 2014 Joerg Mertin  <jmertin@titan> - 1.20-46
+- Backported changes to run on APM 9.5 and older
+- Implemented some error-code redirections
+- Fine tuned packet capture analysis. Created on packet capture to be
+  analyzed later on.
+
+* Fri Jul 25 2014 Joerg Mertin  <jmertin@titan> - 1.20-39
+- Ported apm-scripts to APM 9.6 TIM
+- Change apm-scripts to also provide check-ciphers, apm-perf/sizing 
+  collection, EM/TESS data collection.
+- Provided a simple CLI UI for collection execution
+
+================================================================================
+```

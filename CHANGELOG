@@ -1,154 +1,131 @@
-=== CHANGELOG ==================================================
-Tue May 23 11:36:40 CEST 2017
-- Added nqtmp directory content size, and # of files
+commit 0043e1e52b40891abf3f91111fd1aa9a5cfb93f1
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Oct 31 09:54:37 2017 +0100
 
-Thu Apr 28 18:41:38 CEST 2016
-- Added pcap UI capability
+    Added a "nice" statement in front of all data collection commands, to let other processes have priority.
 
-Mon Feb 29 16:26:47 CET 2016
-- Added balancer configuration
-- Various changes to make the scripts run inside a docker
-  container.
+commit cb974626ba7ab0e491b5d5ba139ff71b8056952b
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Oct 31 09:49:32 2017 +0100
 
-Fri Jan 15 16:53:47 CET 2016
-- remote the NtplTool call. Runs on one out of 2 MTP's
-  only. Reason unknown.
+    replaced xsltproc calls with xmllint. Makes nicer output on xml content
 
-Thu Oct 15 13:11:08 CEST 2015
-- Added extraction of apmpacket log, warning/error lines only
+commit fa98273b6b40cee86630ed7cac93af66803abf8a
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Oct 31 09:47:10 2017 +0100
 
-Fri Oct  9 15:36:41 CEST 2015
-- Added a top directive to show currently running programs
-- More fine tuning
-- Extracting some information from Filesystem drivers
-- Added code to check for out of order segments in pcap/tshark check
+    Restored old entry. Added sysctl data
 
-Wed Sep 30 16:19:05 <jmertin@antigone> - 1.20-78
-- Support for xfs filesystem info gathering
-- Added filter for Bidirectional traffic displa in tshark
+commit 9122d26c0d3f4fdb6600957bc0595561bb0d7eec
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Mon Sep 11 15:15:55 2017 -0300
 
-Thu Sep 10  2015  <jmertin@antigone> - 1.20-77
-- Added support for the napatech nt3g drivers
-- Changed interface detection function to reflect the new naming
-  schemes
+    Added zipping of pcap file.
 
-Tue Aug 11  2015  <jmertin@antigone> - 1.20-77
-- Reduced error messages dumped to console
-- fixed minor bugs (user feedback)
-- remoted ntpq - it left the console in locked mode and wouldn't
-  exit after exection.
-- Added ntpstat view to repalce ntpq.
+commit 9fa3cac7153543aaad7d2e69e226a400c654f2a1
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Sep 8 12:59:06 2017 -0500
 
-Thu Jul  2  2015 <jmertin@antigone> - 1.20-77
-- Adapted apm-syslog to include apm-scripts version
-- Added check for applications using SWAP.
-- Added check on ntp status and vmotion host migration detection.
+    Added sysctl to be collected
 
-Wed Jul  1  2015 <jmertin@antigone> - 1.20-76
-- Added hdparm system read speed check
+commit a26cd3b6fb707763013b3de67d4968ba2932ae55
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Sep 8 12:22:38 2017 -0500
 
-Mon Jun 29 2015 <jmertin@antigone> - 1.20-76
-- Added support for non-suid root scripts
-- Changed Sizing to performance (performance data collection)
+    Added warning for some releases of buildpcap
 
-Fri Jun 26 2015 <jmertin@antigone> - 1.20-75
-- Released build 75
-- Finalized sysinfo collector module, renamed to hwcoll.
-- Added apm-scripts version info into all logs.
+commit 62d5ca88d2d52c3f8f3f16e8b5884f6f41682df2
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Sep 8 12:00:29 2017 -0500
 
-Wed Jun 24 2015 <jmertin@antigone> - 1.20-74
-- Added sysinfo-collector code, to extract data for the HW Compat
-  DB. Still experimental. Need ton adapt the sysinfo-code to the
-  shared-code base
+    Wrong exension in log-file fixed.
 
-Tue Jun 23 2015 <jmertin@antigone> - 1.20-74
-- Added Data-directory wipe before new timperf data is collected.
-- Changed Display of DF output
+commit b6cbc6c13b870635fadb1666d4c9792bf967f081
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue May 23 11:38:06 2017 +0200
 
-Thu Apr  2 2015 <jmertin@antigone> - 1.20-73
-- Changed the way the Napatech card data is collected
-- Added Storage Manager readout code to SYS call for MTP
-- Packaging, Changelog updated
-- Added workaround for missing pg_env.sh data on old installations
+    Update documentation and changelog
 
-Tue Feb 24 2015 Joerg Mertin  <jmertin@titan> - 1.20-72
-- Added workaround for pg_env.sh configuration script not found on
-  old installations
+commit c8fcbdb0de6f865312852267936a1d122b9fdd78
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue May 23 11:15:58 2017 +0200
 
-Thu Feb 19 2015 by <jmertin@titan> - Version 1.20-71
-- Fix for tshark interface loop which was not found when non regular
-  network interfaces are in use.
+    Changed nqtmp file listing/sizes
 
-Wed Nov 19 2014 by <jmertin@titan> - Version 1.20-70
-- Added certificate export and modulus computation of remote 
-  certificate in CIPHER module
-- Network interface traffic detection routine changed
--  PSQL data queries added
+commit 8d8922e0d96c33167ab1df877ae299d6029d00fd
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue May 23 10:46:32 2017 +0200
 
-Fri Dec 19 2014 Joerg Mertin  <jmertin@titan> - 1.20-69
-- Initial apmPHP function
-- replaced lsb_release gathering using internal apmsysinfo 
-  function
+    Slight redirection change
 
-Sun Sep 28 2014 Joerg Mertin  <jmertin@titan> - 1.20-69
-- Removed some checks to be done on MTP's, as these lock the script
-  when 2 Napatech cards are installed in Master/Slave configuration
-  (8Ports).
-- Some fine tuning on Interface messages
+commit 21779e72a83cbdc9601d87ca39cf68b7cf34b72c
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue May 23 10:37:26 2017 +0200
 
-Wed Sep 17 2014 Joerg Mertin  <jmertin@titan> - 1.20-68
-- Changed the TIM 9.5/9.6 detection to be based on the timsettings.db
-  instead of looking for the license file.
+    Added nqtmp file and size checks
 
-Fri Sep 12 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
-- Added complementary check on /tmp size for packet capture.
-  If less than 2 GB available, only headers will be captured
+commit e5dbde39cc8592a9a261228975950763584b57ba
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Aug 30 11:14:42 2016 +0200
 
-Mon Sep  8 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
-- Added 2 more DB checks. Cache hit ratio and index usage
+    Cleanup.
 
-* Thu Sep 4 2014 Joerg Mertin  <jmertin@titan> - 1.20-63
-- Added additional tshark analysis report
-- Added additional extraction of TIM log data
+commit c0eb584c3cd4414bf2cbdad8f0c6d6d0b6070eac
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 24 11:41:42 2016 +0200
 
-* Wed Jul 30 2014 Joerg Mertin  <jmertin@titan> - 1.20-62
-- Packet capture now working for Single TIM, Single TIM with napatech
-  Capture card and Multiport collector using buildpcap
-- Added MTP automatic Napatech card feed detection for buildcap
-- Added expert analysis report creation on packet capture
-- Added modinfo extraction for ntki driver (Napatech - not in the
-  usual path)
-- Made sure the packet capture is not taking into account the payload,
-  and increased the limit in capture time. This will increase the time
-  to take a packet capture and analysis, however the data will be way
-  more accurate.
+    Extracting system release throughb system-release again.
 
-* Mon Jul 28 2014 Joerg Mertin  <jmertin@titan> - 1.20-46
-- Backported changes to run on APM 9.5 and older
-- Implemented some error-code redirections
-- Fine tuned packet capture analysis. Created on packet capture to be
-  analyzed later on.
+commit 51123d6b96710c98fd22f6ac60cd6a578dae7a8e
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 24 11:41:23 2016 +0200
 
-* Fri Jul 25 2014 Joerg Mertin  <jmertin@titan> - 1.20-39
-- Ported apm-scripts to APM 9.6 TIM
-- Change apm-scripts to also provide check-ciphers, apm-perf/sizing 
-  collection, EM/TESS data collection.
-- Provided a simple CLI UI for collection execution
+    Restored old behavior of apmsysinfo
 
-================================================================================
+commit fc052904523de99e65b635243da4c742708a1d6d
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 24 11:23:39 2016 +0200
 
-=== GIT CHANGELOG ==============================================
-* 2017-05-23 - (HEAD -> master) Changed nqtmp file listing/sizes 
-* 2017-05-23 - (origin/master, origin/HEAD) Slight redirection change 
-* 2017-05-23 - Added nqtmp file and size checks 
-* 2016-08-30 - Cleanup. 
-* 2016-06-24 - Extracting system release throughb system-release again. 
-* 2016-06-24 - Restored old behavior of apmsysinfo 
-* 2016-06-24 - Because many network-setups do not use eth anymore, removed the limitation 
-* 2016-06-24 - Added cleanup of data directory after data collection. 
-* 2016-06-17 - Updated changelog data 
-* 2016-06-17 - Fixed OS-Release extraction redirection 
-* 2016-06-17 - Added missing .build file 
-* 2016-06-17 - Name change - adapted for first import. 
-* 2016-06-17 - Recreated CHANGELOG 
-* 2016-06-17 - (tag: v1.20-89) Initial apm-scripts git commit 
+    Because many network-setups do not use eth anymore, removed the limitation
+
+commit f40be392ba91c0a1638f8f4b189cdb571fd9551e
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 24 10:57:56 2016 +0200
+
+    Added cleanup of data directory after data collection.
+
+commit 11670cf0700bb39f712d63774b784b08cdbb1f98
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 17:46:56 2016 +0200
+
+    Updated changelog data
+
+commit 695b9292ab08db4cc90487c341bafa4ff3585104
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 17:46:06 2016 +0200
+
+    Fixed OS-Release extraction redirection
+
+commit c1b0e499f0197b038449ab3cbf08730376e18c1a
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 17:37:05 2016 +0200
+
+    Added missing .build file
+
+commit 10f9e94f573c145380fc6fc4bb6eb5b9ff3943c2
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:38:46 2016 +0200
+
+    Name change - adapted for first import.
+
+commit fcd61d667a1ba19ca8f28489487e3faf15847dc4
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:35:15 2016 +0200
+
+    Recreated CHANGELOG
+
+commit 7a971178f9bff35d2d1bce4aa47d865d82ef586b
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Jun 17 12:33:54 2016 +0200
+
+    Initial apm-scripts git commit
