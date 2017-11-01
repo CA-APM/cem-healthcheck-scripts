@@ -296,6 +296,12 @@ then
     then
 	entry "Tim settings"
 	${TIMDIR}/bin/configtool -f ${TIMDIR}/config/timsettings.db -l >> $LogFile
+
+	if [ -f /opt/CA/APM/apmpacket/config/apmpacketsettings.db ]
+	   then
+	       entry "APMPacket settings"
+	       ${TIMDIR}/bin/configtool -f /opt/CA/APM/apmpacket/config/apmpacketsettings.db -l >> $LogFile
+	fi
     fi
 
     if [ -f ${TIMDIR}/config/balancer.cnf ]
