@@ -1,4 +1,4 @@
-# fieldpack.apm-scripts 1.20-91 by J. Mertin -- joerg.mertin(-AT-)ca.com
+# fieldpack.apm-scripts 1.20-92 by J. Mertin -- joerg.mertin(-AT-)ca.com
 Purpose: Provides scripts to collect data for troubleshooting an APM 9.x or later installation
 
 # Description

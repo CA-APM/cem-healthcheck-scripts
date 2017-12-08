@@ -1,3 +1,33 @@
+commit db44026ad0b725bffce58c5b382e6157d7cf2c89
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Dec 8 11:11:47 2017 +0100
+
+    added MTP status view and filter configuration view
+
+commit 1eb3760ecc80d8ae36715fadb30de6384c43a71c
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Dec 8 11:00:04 2017 +0100
+
+    Added apmpacket/tim installation files comparison to RPM DB
+
+commit 36aecc24c3ad7fd3b3d1978bc9e3be34a75516ba
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Fri Dec 8 10:56:57 2017 +0100
+
+    Added different redhat release check, as sometimes it is required to update the redhat-release file to install the TIM.
+
+commit b39ae78eae2cee3caf121c0c4716743ca959b138
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Wed Nov 1 12:07:41 2017 +0100
+
+    Added apmsettings extraction
+
+commit 9aed10a8c7b0b6ff755dec5eb0d7e6b58a37520b
+Author: Joerg Mertin <joerg.mertin@ca.com>
+Date:   Tue Oct 31 12:35:19 2017 +0100
+
+    Updated changelog
+
 commit 43073b81156d9444d45c620cca40ab64235b3711
 Author: Joerg Mertin <joerg.mertin@ca.com>
 Date:   Tue Oct 31 10:27:06 2017 +0100
