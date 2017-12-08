@@ -818,6 +818,22 @@ else
     echo "Iptables not yet configured" >> $LogFile
 fi
 
+title "MTP based information"
+
+if [ -x /opt/NetQoS/scripts/nqSystemStatus.php ]
+then
+    # Found MTP - check its status
+    entry "MTP System status"
+    /opt/NetQoS/scripts/nqSystemStatus.php >> $LogFile   
+fi
+
+if [ -x /opt/NetQoS/scripts/feedConfiguration.php ]
+then
+    entry "MTP Feed configuration"
+    /opt/NetQoS/scripts/feedConfiguration.php --printConfig >> $LogFile
+fi
+
+
 title "Configured network configuration / System files"
 
 for file in `find /etc/sysconfig/network-scripts -name "ifcfg-eth*"`
