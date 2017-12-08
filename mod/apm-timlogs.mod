@@ -278,6 +278,13 @@ then
         # Extract installed TIM directory from RPM DB
 	TIMDIR=`rpm -ql tim | grep bin/tim$ | sed -e 's/\/bin\/tim//g'`
 	APMPACKET=`rpm -ql apmpacket | grep bin/apmpacket$ | sed -e 's/\/bin\/apmpacket//g'`
+
+	# Get TIM status out / compared to RedHat RPM DB.
+	entry "apmpacket installation files changes"
+	rpm -qV apmpacket  >> $LogFile
+	entry "TIM installation files changes"
+	rpm -qV tim >> $LogFile
+	
     else
 	TIMDIR="/etc/wily/cem/tim"
     fi
