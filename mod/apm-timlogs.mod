@@ -137,8 +137,16 @@ uname -a >> $LogFile
 entry "uptime"
 uptime >> $LogFile
 
-entry "Release Information"
-find /etc -name "*-release" -type f -exec cat {} \; >> $LogFile
+
+if [ -f /etc/redhat-release ]
+then
+    entry "Release Information"
+    RelFile=`rpm -qf /etc/redhat-release`
+    rpm -qi $RelFile >> $LogFile
+else    
+    entry "Release Information"
+    find /etc -name "*-release" -type f -exec cat {} \; >> $LogFile
+fi
 
 if [ -f /etc/sysconfig/selinux ]
 then
@@ -273,6 +281,8 @@ then
     else
 	TIMDIR="/etc/wily/cem/tim"
     fi
+
+    # Checking if TIM is started
     if [ `pidof tim` -gt 1 ]
     then
 	if [ -x /usr/bin/pstack ]
